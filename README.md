@@ -46,3 +46,21 @@ mappedValue = constrain(mappedValue, 0, 100); // Ensures value is between 0–10
 
 Serial.println(mappedValue);
 ```
+
+
+## Maximising Memory
+
+### Defining constants
+
+| **Aspect**          | **const int**             | **#define**               | **constexpr**           |  
+|----------------------|---------------------------|---------------------------|-------------------------|  
+| **Memory Usage**    | Stored in SRAM (RAM)      | No SRAM usage (macro)     | Stored in Flash (Program Memory) if not referenced dynamically |  
+| **Type Safety**     | Type-checked by compiler  | No type safety            | Type-checked by compiler |  
+| **Debugging**       | Easier to debug           | Harder to trace errors    | Easier to debug         |  
+| **Scope**           | Scoped to the variable    | Global scope             | Scoped to the variable  |  
+| **Code Clarity**    | Better readability        | May become unclear        | Better readability      |  
+| **Compiler Behavior** | Respects scoping rules   | Simple text replacement   | Respects scoping rules and evaluated at compile-time |  
+| **Optimization**    | Compiler may optimize     | No optimization guarantee | Guaranteed compile-time evaluation |  
+| **Availability**    | Available in C++98+       | Always available          | Available from C++11+   |  
+
+
